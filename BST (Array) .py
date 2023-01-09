@@ -1,11 +1,20 @@
 class Tree:
 
-    def __init__(self , arr):
-        self.arr = arr
-        self.n = len(arr)
+    def __init__(self):
+        self.arr = [None]*50
+        self.n = len(self.arr)
 
     def empty(self):
         return self.arr == []
+
+    def insert(self,idx,c,key):
+        if c == 'l':
+            self.arr[2*idx+1] = key
+        elif c == 'r':
+            self.arr[2*idx+2] = key
+
+    def insert_root(self , key):
+        self.arr [0] = key
 
     def search (self , key):
 
@@ -134,16 +143,28 @@ class Tree:
         if self.arr[idx] != None:
             print(self.arr[idx],end= ' ')
 
-a = [5,4,6,3,None,None,8,1,None,None,None,None,None,7,9,None,2]
-tree = Tree(a)
+BST = Tree()
 
-print(tree.min_key())
-print(tree.max_key())
-print(tree.search(6))
-print(tree.height())
-print(tree.cnt_nodes())
-print(tree.cnt_leaves())
-print(tree.cnt_internals())
-tree.preorder();print()
-tree.inorder();print()
-tree.postorder()
+BST.insert_root(5)
+BST.insert(0,'l',4)
+BST.insert(0,'r',6)
+BST.insert(1,'l',3)
+BST.insert(2,'r',8)
+BST.insert(3,'l',1)
+BST.insert(6,'l',7)
+BST.insert(6,'r',9)
+BST.insert(7,'r',2)
+
+
+print(BST.min_key())
+print(BST.max_key())
+print(BST.search(6))
+print(BST.height())
+print(BST.cnt_nodes())
+print(BST.cnt_leaves())
+print(BST.cnt_internals())
+
+
+BST.preorder();print()
+BST.inorder();print()
+BST.postorder()

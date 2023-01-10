@@ -126,21 +126,21 @@ class Tree:
         if idx >= self.n : return
         if self.arr[idx] != None:
             print(self.arr[idx],end= ' ')
-        self.preorder(2*idx+1)
-        self.preorder(2*idx+2)
+            self.preorder(2*idx+1)
+            self.preorder(2*idx+2)
 
     def inorder(self , idx = 0):
         if idx >= self.n : return
-        self.inorder(2*idx+1)
         if self.arr[idx] != None:
+            self.inorder(2*idx+1)
             print(self.arr[idx],end= ' ')
-        self.inorder(2*idx+2)
+            self.inorder(2*idx+2)
 
     def postorder(self , idx = 0):
         if idx >= self.n : return
-        self.postorder(2*idx+1)
-        self.postorder(2*idx+2)
         if self.arr[idx] != None:
+            self.postorder(2*idx+1)
+            self.postorder(2*idx+2)
             print(self.arr[idx],end= ' ')
 
 BST = Tree()

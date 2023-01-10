@@ -38,19 +38,17 @@ class Tree:
                 return 0
 
     def min_key(self):
+
         if self.empty():
             print("Tree is empty !")
             return
 
         idx = 0
         mn = self.arr [0]
-        while True:
-            if idx < self.n:
-                if self.arr [idx] != None:
-                    mn = self.arr[idx]
-                    idx = 2 * idx + 1
-                else:
-                    return mn
+        while idx < self.n:
+            if self.arr [idx] != None:
+                mn = self.arr[idx]
+                idx = 2 * idx + 1
             else:
                 return mn
 
@@ -62,13 +60,10 @@ class Tree:
 
         idx = 0
         mx = self.arr [0]
-        while True:
-            if idx < self.n:
-                if self.arr [idx] != None:
-                    mx = self.arr[idx]
-                    idx = 2 * idx + 2
-                else:
-                    return mx
+        while idx < self.n:
+            if self.arr [idx] != None:
+                mx = self.arr[idx]
+                idx = 2 * idx + 2
             else:
                 return mx
 
